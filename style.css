@@ -3,7 +3,7 @@
    Design System: Violet #7C3AED + Cyan #06B6D4 on Deep Dark
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap');
 
 /* ── CSS Variables ── */
 :root {
@@ -973,37 +973,48 @@ section {
 }
 
 .proj-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.6;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13.5px;
+  color: #94A3B8;
+  line-height: 1.65;
   margin-bottom: 14px;
   flex: 1;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
+.proj-body ul,
 .proj-bullets {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 14px 0;
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 14px 0 !important;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 7px;
   flex: 1;
 }
 
+.proj-body ul li,
 .proj-bullets li {
-  font-size: 12.5px;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  color: #94A3B8;
+  line-height: 1.6;
   position: relative;
-  padding-left: 16px;
+  padding-left: 18px;
+  list-style: none !important;
+  list-style-type: none !important;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
+.proj-body ul li::before,
 .proj-bullets li::before {
   content: '▹';
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 11px;
+  font-size: 12px;
   top: 1px;
 }
 
