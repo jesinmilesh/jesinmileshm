@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Management System - Project Detail</title>
+    <title>Caesar Cipher Encryption Tool - Project Detail</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         :root {
-            --primary: #A78BFA;
-            --primary-dark: #7C3AED;
-            --accent: #06B6D4;
+            --primary: #F59E0B;
+            --primary-dark: #D97706;
+            --accent: #EC4899;
             --bg-color: #080810;
             --glass-bg: rgba(255, 255, 255, 0.04);
-            --glass-border: rgba(124,58,237,0.25);
+            --glass-border: rgba(245, 158, 11, 0.25);
             --text-main: #F1F5F9;
             --text-muted: #94A3B8;
-            --gradient: linear-gradient(135deg, #7C3AED, #06B6D4);
+            --gradient: linear-gradient(135deg, #F59E0B, #EC4899);
         }
 
         * {
@@ -50,7 +50,19 @@
             left: -10%;
             width: 50%;
             height: 50%;
-            background: radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+            filter: blur(60px);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            right: -10%;
+            width: 50%;
+            height: 50%;
+            background: radial-gradient(circle, rgba(236, 72, 153, 0.12) 0%, transparent 70%);
             filter: blur(60px);
             z-index: 0;
         }
@@ -69,12 +81,12 @@
         }
 
         .content {
-            flex: 1 1 300px;
+            flex: 1 1 500px;
             animation: fadeInLeft 1s ease;
         }
 
         .title {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             margin-bottom: 1rem;
             line-height: 1.1;
@@ -86,9 +98,9 @@
         }
 
         .subtitle {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            color: var(--primary) !important;
+            margin-bottom: 1rem;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -98,7 +110,7 @@
             font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
-            max-width: 600px;
+            max-width: 650px;
         }
 
         .features {
@@ -139,20 +151,52 @@
         }
 
         .image-container {
-            flex: 1 1 300px;
+            flex: 1 1 350px;
             animation: fadeInRight 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .image-container img {
+        .image-wrapper {
             width: 100%;
+            max-width: 480px;
+            height: 380px;
             border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #1f1406, #2d1808);
             border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
             transition: transform 0.5s ease;
         }
 
-        .image-container img:hover {
+        .image-wrapper:hover {
             transform: scale(1.02);
+            border-color: var(--primary);
+        }
+
+        .image-wrapper i {
+            font-size: 110px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .image-badge {
+            font-size: 13px;
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            color: #fcd34d;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .back-btn {
@@ -162,21 +206,22 @@
             padding: 0.6rem 1.4rem;
             font-size: 13px;
             background: var(--gradient);
-            color: #fff;
+            color: #080810 !important;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             border: none;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
         }
+
         .back-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(124,58,237,0.5);
-            color: #fff;
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
+            color: #080810 !important;
         }
 
         .btn {
@@ -201,7 +246,7 @@
         .btn:hover {
             background: var(--primary);
             color: var(--bg-color);
-            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
         }
 
         .btn.primary {
@@ -214,12 +259,18 @@
             color: var(--primary);
         }
 
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
                 transform: translateX(-50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -231,7 +282,6 @@
                 opacity: 0;
                 transform: translateX(50px);
             }
-
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -243,13 +293,11 @@
                 flex-direction: column;
                 text-align: center;
             }
-
             .features {
                 text-align: left;
             }
-
             .title {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
         }
 
@@ -264,7 +312,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 3rem;
-            background: linear-gradient(90deg, #fff, var(--primary));
+            background: var(--gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -295,7 +343,7 @@
         }
 
         .detail-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--text-main);
             margin-bottom: 1rem;
             display: flex;
@@ -310,7 +358,7 @@
         .detail-card p,
         .detail-card ul {
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.6;
         }
 
@@ -332,8 +380,6 @@
             color: var(--primary);
             font-weight: bold;
         }
-        .subtitle { color: var(--accent) !important; }
-        .section-title { background: var(--gradient); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
     </style>
 </head>
 
@@ -342,36 +388,41 @@
         <div class="container">
             <div class="content">
                 <a href="../index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
-                <div class="subtitle">HR Operations App</div>
-                <h1 class="title">Employee System</h1>
+                <div class="subtitle">Classical Cryptography & Ciphers</div>
+                <h1 class="title">Caesar Cipher Encryption Tool</h1>
                 <p class="description">
-                    A comprehensive Employee Management System designed to handle human resources operations. Built with
-                    a sleek desktop UI using Python and SQLite for persistent database management.
+                    An interactive cryptosystem demonstrator implementing the classical Caesar substitution cipher. Performs mathematical character rotation modulo 26, preserving punctuation, casing, and spaces while illustrating fundamental cryptographic principles.
                 </p>
                 <div class="features">
                     <div class="feature-card">
-                        <i class="fas fa-users"></i>
-                        <h3>Staff Directory</h3>
-                        <p>Easily browse, update, and manage all employee records in one place.</p>
+                        <i class="fas fa-rotate"></i>
+                        <h3>Shift Key Dynamics</h3>
+                        <p>Supports key rotation values from 1 to 25 with automatic input clamping and validation.</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-database"></i>
-                        <h3>SQLite DB</h3>
-                        <p>Reliable and lightweight persistent storage system.</p>
+                        <i class="fas fa-lock-open"></i>
+                        <h3>Bi-directional Engine</h3>
+                        <p>Dedicated Encrypt and Decrypt pipelines utilizing modular arithmetic inversion.</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Performance</h3>
-                        <p>Optimized for quick load times and rapid data retrieval.</p>
+                        <i class="fas fa-font"></i>
+                        <h3>Case & Symbol Safety</h3>
+                        <p>Preserves uppercase/lowercase integrity while leaving digits, spaces, and punctuation intact.</p>
                     </div>
                 </div>
-                <div style="margin-top: 2rem;">
-                    <a href="https://github.com/jesinmilesh/Employee-Management-System" target="_blank" class="btn primary"
+                <div class="button-group" style="margin-top: 2rem;">
+                    <a href="../Caesar-Cipher/index.html" class="btn primary"
+                        style="padding: 1rem 2.5rem; box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);"><i
+                            class="fas fa-play"></i> Live Demo</a>
+                    <a href="https://github.com/jesinmilesh/Caesar-Cipher" target="_blank" class="btn"
                         style="padding: 1rem 2.5rem;"><i class="fab fa-github"></i> View Repository</a>
                 </div>
             </div>
             <div class="image-container">
-                <img src="../images/employee_dashboard_1779097919180.png" alt="Employee Dashboard">
+                <div class="image-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <div class="image-badge">Substitution Cryptosystem</div>
+                </div>
             </div>
         </div>
     </div>
@@ -382,25 +433,31 @@
             <div class="detail-card">
                 <h3><i class="fas fa-cogs"></i> Technologies Used</h3>
                 <ul>
-                    <li><strong>Python 3:</strong> Application backend</li>
-                    <li><strong>Tkinter:</strong> Native Desktop GUI</li>
-                    <li><strong>SQLite3:</strong> Embedded local database</li>
-                    <li><strong>DB Browser:</strong> For schema management</li>
+                    <li><strong>HTML5 Architecture:</strong> Structured input fields, key controls, and read-only output panels.</li>
+                    <li><strong>CSS3 Glassmorphic Styling:</strong> Card containers with dynamic hover micro-animations and responsive spacing.</li>
+                    <li><strong>Vanilla JavaScript (ES6):</strong> ASCII character-code math, string transformations, and state resets.</li>
+                    <li><strong>Modular Arithmetic:</strong> Formula: $E(x) = (x + k) \pmod{26}$, $D(x) = (x - k) \pmod{26}$.</li>
                 </ul>
             </div>
             <div class="detail-card">
                 <h3><i class="fas fa-lightbulb"></i> Problem Solved</h3>
-                <p>Tracking employee data through spreadsheets is prone to data loss and manual errors. This application
-                    digitizes the HR workflow, allowing for structured data entry, persistent local storage, and
-                    instantaneous record retrieval in a user-friendly interface.</p>
+                <p>Learning classical cryptography is essential for understanding modern symmetric encryption foundations, cryptanalysis, and frequency analysis. This tool delivers a tactile, instant visualization of substitution shifts and ciphertext decryption.</p>
             </div>
             <div class="detail-card">
                 <h3><i class="fas fa-rocket"></i> Key Highlights</h3>
                 <ul>
-                    <li>Seamless Add, Update, and Delete operations for staff records.</li>
-                    <li>Lightweight deployment requiring no external database servers.</li>
-                    <li>Search filters to quickly locate specific employee details.</li>
-                    <li>Secure local data storage via SQLite.</li>
+                    <li>Zero-dependency native client-side execution requiring no backend server.</li>
+                    <li>Automatic shift value sanitization restricting keys to $1 \le k \le 25$.</li>
+                    <li>Integrated clipboard copy with contextual feedback modal dialogs.</li>
+                    <li>One-click state clearing for fast multiple experiments and demos.</li>
+                </ul>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-shield-alt"></i> Cryptographic Concepts</h3>
+                <ul>
+                    <li><strong>Monoalphabetic Substitution:</strong> Replacing each plaintext character with a character a fixed number of positions down the alphabet.</li>
+                    <li><strong>Keyspace Analysis:</strong> Demonstrates why a small keyspace (25 possible shifts) is vulnerable to brute-force frequency analysis.</li>
+                    <li><strong>Modular Inversion:</strong> Demonstrating how decryption is the inverse operation: $(26 - k) \pmod{26}$.</li>
                 </ul>
             </div>
         </div>

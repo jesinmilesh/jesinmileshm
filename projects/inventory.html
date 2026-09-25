@@ -179,6 +179,41 @@
             color: #fff;
         }
 
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn i {
+            margin-right: 0.5rem;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn.primary {
+            background: var(--primary);
+            color: var(--bg-color);
+        }
+
+        .btn.primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
@@ -329,6 +364,10 @@
                         <h3>Reporting</h3>
                         <p>Generate detailed insights and predictive analytics.</p>
                     </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="https://github.com/jesinmilesh/Inventory-Management-System" target="_blank" class="btn primary"
+                        style="padding: 1rem 2.5rem;"><i class="fab fa-github"></i> View Repository</a>
                 </div>
             </div>
             <div class="image-container">
